@@ -1,6 +1,6 @@
 # Generated datasets, indices, model weights, and runtime files
 data/
-datasets/
+/datasets/
 syn_data/
 outputs/
 **/Results/
