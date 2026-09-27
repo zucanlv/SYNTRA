@@ -1,0 +1,18 @@
+[
+  {
+    "source": "/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch",
+    "commit": "48971d99189b08434bf99296ceb525a4b7b05e00"
+  },
+  {
+    "source": "/data/share/project/public_envs/FlagEmbedding",
+    "commit": "bbc736f1884783d4471cc54358e582fa5e76fd0d"
+  },
+  {
+    "source": "/data/share/project/zucan/Synthetic_Data_code/Qwen-Agent",
+    "commit": "9fe749d055595abcbc0484c87a539e8362990875"
+  },
+  {
+    "source": "/data/share/project/zucan/FlagEmbedding",
+    "commit": "d190647310eab785f95a7d0a5be01aaba7e4191d"
+  }
+]

@@ -1,0 +1,212 @@
+# =============================================================================
+# Synthetic Data Generation Pipeline — 全局配置文件
+# 所有字段均可被 CLI 参数覆盖；环境变量 OPENAI_BASE_URL / OPENAI_API_KEY
+# 可在 llm_model_server / llm_api_key 为 null 时自动补充。
+# =============================================================================
+
+# ===== 任务 =====
+task: "msmarco"           # 任务名，需在 HighLevel_Task_Definition 中有对应定义
+
+# ===== Step 2.1 语料路径与格式 =====
+corpus_path: "/data/share/project/tr/data/msmarco/eval/data/passage/corpus.jsonl"
+corpus_format: "auto"     # auto | tsv | csv | jsonl | parquet | hf_dataset
+faiss_dir: "/data/share/project/shared_datasets/DSA/faiss/msmarco-8M-with-title"
+
+# ===== 嵌入模型（BuildIndex 与 Query2Passage 共用）=====
+embedding_model_name: "BAAI/bge-m3"
+embedding_model_path: "/data/share/project/shared_models/bge-m3"
+  # 本地模型路径；设为 null 则从 HuggingFace 下载 embedding_model_name
+
+# ===== Step 2.1: 建索引（BuildIndex）专属配置 =====
+index_batch_size: 16           # 编码时每批次的文档数
+index_num_gpus: 1               # 并行编码使用的 GPU 数量（与 index_gpu_ids 二选一）
+index_gpu_ids: [0]             # 显式指定 GPU ID 列表，如 [0,1,2,3]；null 则按 index_num_gpus 自动分配前 index_num_gpus 个 GPU; 优先级高于 index_num_gpus
+index_use_faiss_gpu: true       # 建索引时是否将 FAISS 索引放到 GPU
+index_faiss_gpu_float16: true   # FAISS GPU 模式是否使用 float16（节省显存，略微降低精度）
+index_id_column: null           # 语料 ID 列名；null = 自动检测
+index_text_column: null         # 语料正文列名；null = 自动检测
+index_title_column: null        # 语料标题列名；null = 自动检测，"" = 不使用标题
+
+# ===== Step 2.2: 多样文本选取（DiverseSelection）专属配置 =====
+# use_diverse_selection: true  → 贪心多样选文（需 num_diverse_passages / cosine_similarity_threshold / top_k 等）
+# false → 不按相似度筛选，将 id_map 中文档全部导出为 JSONL（与选文输出字段一致）；
+#          仅读 id_map.pkl + doc_dict.pkl，不加载 FAISS。若下方已填 diverse_texts 路径跳过 Step 2，则此项不生效。
+use_diverse_selection: false
+num_diverse_passages: 10000      # 目标选取条数；null = 贪心选取（无上限）
+cosine_similarity_threshold: 0.6
+top_k: 2000                     # DiverseSelection 每次迭代中检索的邻居数量（越大越精确，越慢）
+diverse_selection_gpu_ids: [4,5]     # IVF 训练使用的 GPU 编号；null = 默认 GPU(0)；-1 = 强制 CPU
+
+# ===== Step 3: 查询生成 =====
+queries_per_passage: 1          # 每条文档生成的 query 数量
+
+# ===== Step 4: Query2Passage 专属配置 =====
+top_k_candidates: 20            # 每个 query 检索的候选段落数
+q2p_batch_size: 8              # query 编码时每批次的数量
+q2p_faiss_gpu: true             # Query2Passage 检索时是否使用 GPU FAISS
+q2p_gpu_ids: [7]                   # 指定 embedding 模型与 FAISS 使用的 GPU 编号；null 则使用默认 GPU(0)
+q2p_lock_path: "/tmp/dsa_q2p_gpu7.lock"  # 多进程共享同一 Q2P GPU 时启用；null = 不加锁
+q2p_inject_origin_score: true        # 在 Step 4 同步计算 origin doc 的精确余弦分并写入 q_obj["pos_score"]，供 Step 5 HN Mine 使用；false 则沿用旧逻辑（is_original 候选 score 或代理分）
+
+# ===== Step 4: 从外部 DiverseQuery 批处理切入（跳过 Step 2–3）=====
+# 若非 null，则跳过 Step 2 / 2.5 / 2.6 / 3，直接进入 Step 4（Query2Passage）及后续 Step 5。
+# 文件须为与 Step 3 输出相同结构的 JSON：顶层含非空 "results"（每项含 doc_id、queries）。
+# 可由 corpus_preprocess/diversetexts2querypos.py 等脚本生成。与 fully_annotation 配合选择全标注或 HN 分支。
+# 使用此选项时仍需配置 task、faiss_dir、embedding 模型及 instructions_store_dir（production）。
+step4_diverse_query_input: null
+
+# ===== Step 5: 从外部 Query2Passage 输出切入（跳过 Step 2–4）=====
+# 若非 null，则跳过 Step 2 / 2.5 / 2.6 / 3 / 4，直接进入 Step 5（全标注或难负例挖掘，由 fully_annotation 决定）。
+# 文件须为 Query2Passage 已检索后的 JSON（顶层含非空 "results"，且至少有一条 query 带非空 "candidates"）。
+# 不需要 faiss_dir / 嵌入模型参与本 run（与 step4_diverse_query_input 不同）。
+# 与 step4_diverse_query_input 互斥，不可同时设置。
+# 仍需配置 task、instructions_store_dir（production）及 Step 5 相关 LLM。
+step5_query2passage_input: null
+
+# ===== LLM 配置 =====
+# 全局默认：未在 llm_stages 中单独配置的阶段使用此配置。
+# model_server 和 api_key 为 null 时自动读取环境变量 OPENAI_BASE_URL / OPENAI_API_KEY
+llm_model: "gpt-4.1-mini"
+llm_model_server: null
+llm_api_key: null # Supply credentials through environment variables
+# 各阶段可单独指定 model / model_server / api_key；未写字段沿用全局配置。
+# 阶段名：idattr_refine | idattr_gen | queryinstr | diversequery | annoinstr | annotation | filter | queryfilter
+# 示例：IdAttr refine/gen 可分开配，QueryInstr 用 gemini-3-flash-preview-thinking
+llm_stages:
+  filter:
+    model: "/data/share/project/shared_models/Qwen3-30B-A3B-Instruct-2507"
+    model_server: "http://127.0.0.1:8000/v1"
+    api_key: null # Supply credentials through environment variables
+  idattr_refine:
+    model: "openai/gpt-4.1-mini"
+    model_server: "https://openrouter.ai/api/v1"
+    api_key: null # Supply credentials through environment variables
+  idattr_gen:
+    model: "/data/share/project/shared_models/Qwen3-30B-A3B-Instruct-2507"
+    model_server: "http://127.0.0.1:8000/v1"
+    api_key: null # Supply credentials through environment variables
+  queryinstr:
+    model: "google/gemini-3-flash-preview"
+    model_server: "https://openrouter.ai/api/v1"
+    api_key: null # Supply credentials through environment variables
+  # diversequery / annoinstr / annotation / filter 不写则使用上方全局 llm_model
+  diversequery:
+    model: "/data/share/project/shared_models/Qwen3-30B-A3B-Instruct-2507"
+    model_server: "http://127.0.0.1:8000/v1"
+    api_key: null # Supply credentials through environment variables
+  annoinstr:
+    model: "openai/gpt-4.1-mini"
+    model_server: "https://openrouter.ai/api/v1"
+    api_key: null # Supply credentials through environment variables
+  annotation:
+    model: "/data/share/project/shared_models/Qwen3-30B-A3B-Instruct-2507"
+    model_server: "http://127.0.0.1:8000/v1"
+    api_key: null # Supply credentials through environment variables
+
+
+# ===== Step 5: 标注模式选择 =====
+# fully_annotation=true  → 走原有 LLM 全标注路径（BatchCandidateAnnotator）
+# fully_annotation=false → 走难负例挖掘路径（HnMineTool）
+fully_annotation: true
+
+# ===== Step 5: 标注（BatchAnnotation）专属配置（fully_annotation=true 时生效）=====
+max_queries: null               # 最多标注的 query 数量；null = 全部标注
+candidates_num_each_anno: 4  # 每次 LLM 标注调用传入的 candidates 数量；null = 全部一起标注（原行为）
+
+# ===== 并发调用配置 =====
+# 控制 pipeline 中所有 LLM 批处理循环的并发行为。
+# 受影响的阶段：Step 2.5 DocType filter / Step 3.1 IdAttr 生成 /
+#               Step 3.3 DiverseQuery 生成 / Step 3.5 Query filter / Step 5 Annotator 或 HnMine。
+# Self-Refine 本质串行（每次尝试依赖上次结果），不受此配置影响。
+concurrency:
+  enabled: true      # false = 完全串行（调试 / 精确复现运行顺序时使用）
+  max_workers: 64     # 最大并发线程数；null = Python 默认 min(32, cpu_count+4)
+  jitter: 0.0        # 提交任务时的随机抖动（秒），用于分散请求、避免触发速率限制
+
+# ===== Step 5: 难负例挖掘配置（fully_annotation=false 时生效）=====
+# origin_doc_annotation=true  → 用 LLM 验证原始 doc 是否为真正 positive（使用 AnnoInstrRefine_* 指令）；
+#                               验证失败则丢弃该 query
+# origin_doc_annotation=false → 直接将原始 doc 作为 positive，不做 LLM 验证
+origin_doc_annotation: false
+hn_top_k_candidates: 200        # HN 挖掘时 Step 4（Query2Passage）检索的候选数量；Branch A 需要 200+
+hn_negative_number: 15          # 每条 query 目标挖掘的难负例数量
+hn_range_for_sampling: "30-200" # Branch A 采样的 rank 窗口（参考代码默认 30-200）
+
+# ===== 跨 run 的 Instruction 存储目录 =====
+# test_mode 下，refine 过程的所有文件（attempt/history/final）写入当次 run 的
+#   Results/{task}_{timestamp}/Instructions/ 目录；同时将最终 instruction 另存到此目录。
+# production_mode 下，直接从此目录读取 refined instruction，不存在则报错退出。
+# 可写相对路径（相对于 Main_Pipeline/）或绝对路径；null = 使用默认 Results/Instructions/{task_name}
+instructions_store_dir: /data/share/project/shared_datasets/DSA/others/Instructions/msmarco
+
+# =============================================================================
+# ===== Step 2 / 2.5 跳过 / 测试 配置 =====
+# =============================================================================
+#
+# filtered_diverse_texts: 已有「过滤后多样文本」JSONL 时填路径，则 Step 2（建索引 + 选文）
+#   和 Step 2.5（DocType filter）均跳过，直接进 Step 3。
+#   优先级高于 diverse_texts；填 null 或不写则继续往下判断。
+filtered_diverse_texts: null
+#
+# diverse_texts: 已有「多样文本」JSONL 时填路径，则整段 Step 2（建索引 + 选文/全量导出）跳过，
+#   但仍会执行 Step 2.5（DocType filter）后再进 Step 3。
+#   填 null 或不写则走 Step 2（建索引 + Step 2.2）。use_diverse_selection 仅在执行 Step 2 时有效。
+diverse_texts: /data/share/project/shared_datasets/DSA/others/diverse_texts/diverse_texts_cos060_title_msmarco_516951.jsonl
+#
+# skip_index: diverse_texts 为空时，设为 true 则跳过建索引。
+#   use_diverse_selection=true 时仍需 faiss_dir 下有 index.faiss 以运行多样选文；
+#   use_diverse_selection=false 时 Step 2.2 全量导出只需 id_map.pkl 与 doc_dict.pkl（Step 4 检索仍依赖完整索引）。
+skip_index: true
+#
+# ===== Step 2.5: DocType filter 专属配置 =====
+use_filter: false               # true=执行 Step 2.5 DocType filter；false=跳过 filter，直接将 diverse_texts 送入 Step 3
+filter_batch_size: 3           # 每次 LLM 调用处理的文档数量；值越大吞吐越高，但单次 token 消耗增加
+#
+# ===== Step 3.5: Query filter 专属配置 =====
+use_query_filter: false          # true=执行 Step 3.5 Query filter；false=跳过，直接将 DiverseQuery 送入 Step 4
+query_filter_batch_size: 10     # 每次 LLM 调用处理的 query 数量；值越大吞吐越高，但单次 token 消耗增加
+query_filter_inject_golden_queries: true  # true=将 Few_Shot_Example 中的 query 作为"风格金标准"注入 filter prompt
+query_filter_golden_query_count: 3        # 最多注入多少条 golden query 示例；过多会增加 prompt token
+query_filter_golden_query_max_chars: 200  # 每条 golden query 保留的最大字符数
+#
+# test_mode: 设为 true 时 Step 3 只对少量样本跑（样本数由 test_sample_size 控制），方便快速调试。
+test_mode: false
+test_sample_size: 5             # test_mode 为 true 时参与 Step 3 的多样文本条数
+test_seed: 42                   # test_mode 时的随机种子，便于复现
+human_review: false             # test_mode 为 true 时，是否启用人工复核交互
+human_review_timeout: 10        # PASS 覆盖提示等待秒数；超时后沿用 LLM 判定
+human_review_no_editor: false   # true=不打开 $EDITOR，直接从 stdin 读取多行输入
+
+# =============================================================================
+# ===== Production mode 采样配置 =====
+# 仅在 test_mode=false（production mode）下生效。
+# 对 Step 2.5 产出的 filtered_diverse_texts（或 use_filter=false 时的 diverse_texts）
+# 进行采样，采样结果写入当次 run 目录后作为 Step 3 的输入。
+# Step 4（Query2Passage）使用的 FAISS 索引来自整个 corpus，不受此处采样影响。
+# =============================================================================
+production_sample:
+  enabled: true      # true = 启用采样；false = 使用全部文档（默认）
+
+  mode: "range"        # 采样模式：random | range | indices
+
+  # mode=random: 随机采样 count 条；seed 为 null 时不固定随机种子
+  count: 10000
+  seed: 42
+
+  # mode=range: 按行索引区间采样（0-based，闭区间），格式 "start-end"
+  # 例："0-99" 取前 100 条，"500-999" 取第 501~1000 条
+  range: "240000-269999"
+
+  # mode=indices: 指定具体行索引（0-based）的列表
+  # 例：[0, 5, 10, 42]；null = 不使用此模式
+  indices: null
+
+# main.py 周期性进度心跳：每隔多少秒在 log 中打印 [Progress]（0 = 关闭）
+progress_log_interval_sec: 60
+
+# ===== Query Length Control (Step 3.3) =====
+# true = 动态长度约束：每次生成按 golden query 分布采样一档长度区间，将约束追加到 task_instruction 末尾。
+# QueryLengthDist_{task}_*.json 缓存在 instructions_store_dir，第一次运行时自动生成。
+query_length_control:
+  enabled: false   # true = 启用；false = 关闭（默认，与旧版行为一致）
+  use_llm: false   # true = 用 LLM（queryinstr 模型）生成语义化 bucket 描述；false = 纯统计路径（更快）

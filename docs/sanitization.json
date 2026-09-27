@@ -1,0 +1,382 @@
+[
+  {
+    "path": "Main_Pipeline/config/RQ-1-gen-ori/config_0509-msmarco-gen-0k-24k-continue.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-1-gen-ori/config_0509-msmarco-gen-0k-24k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-1-gen-ori/config_0509-msmarco-gen-24k-48k-continue.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-1-gen-ori/config_0509-msmarco-gen-24k-48k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-1-gen-ori/config_0509-msmarco-gen-48k-74k-continue.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-1-gen-ori/config_0509-msmarco-gen-48k-74k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/arguana/config_0811-arguana-all.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/arguana/config_0811-arguana-human-calibrate.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/arguana/config_0811-arguana-wo-self-refine.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/code-retrieval/codetrans-dl/config_0805-codetrans-dl-2q.yaml",
+    "replacements": 8
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/code-retrieval/codetrans-dl/config_0805-codetrans-dl-4q.yaml",
+    "replacements": 8
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/code-retrieval/codetrans-dl/config_0805-codetrans-dl-test.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/code-retrieval/config-0618-cosqa-10k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/code-retrieval/config-0624-cosqa-official-train-qpos.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/code-retrieval/config-0627-cosqa-10k-official-doc.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/code-retrieval/config-0627-synthetic-text2sql-official-doc-gen-qeury.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/code-retrieval/config-0627-synthetic-text2sql-official.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/config_0508-climate-fever-10k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/config_0508-dbpedia-10k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/config_0508-touche2020-10k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/config_0514_cosqa-10k-continue.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/config_0514_cosqa-10k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/law/config_0721-lecardv2-test.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/law/legalbench-rag/config_0805-legalbench-rag-2q.yaml",
+    "replacements": 8
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/law/legalbench-rag/config_0805-legalbench-rag-4q.yaml",
+    "replacements": 8
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/law/legalbench-rag/config_0805-legalbench-rag-test.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/literature/config_0801-birco-relic-all.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/literature/config_0805-scirepeval-search.yaml",
+    "replacements": 1
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/math/config_0801-cqadupstack-mathematica-10k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/medical/evidencebench/config_0805-evidencebench-10k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/medical/medical_qa/config_0805-medical_qa-2q.yaml",
+    "replacements": 8
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/medical/medical_qa/config_0805-medical_qa-4q.yaml",
+    "replacements": 8
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/medical/medical_qa/config_0805-medical_qa-all.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/medical/medicalretrieval/config_0729-medicalretrieval-10k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/nq/config_0801-nq-10k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/nq/config_0811-nq-test-qrels-4201.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/physics/config_0729-cqadupstack-physics-10k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/reasoning-intensive/config_0629-bright-documents-economics-10k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/reasoning-intensive/config_0629-bright-documents-economics-reason-embed.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/reasoning-intensive/config_0706-bright-documents-pony-10k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/reasoning-intensive/config_0706-bright-documents-pony-reason-embed.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/reasoning-intensive/config_0707-bright-documents-theoremqa_questions-10k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/reasoning-intensive/config_0707-bright-documents-theoremqa_questions-reason-embed.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/reasoning-intensive/config_0712-bright-documents-theoremqa_theorems-10k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/reasoning-intensive/config_0712-bright-documents-theoremqa_theorems-reason-embed.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/reasoning-intensive/config_0731-spartqa-mchoice-gen-query.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/reasoning-intensive/config_0731-spartqa-mchoice-train-qpos.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/reasoning-intensive/config_0731-winogrande-gen-query.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/reasoning-intensive/config_0731-winogrande-train-qpos.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/reasoning-intensive/config_0814-bright-documents-theoremqa_theorems-10k-human-calibrate.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/reasoning-intensive/config_0814-bright-documents-theoremqa_theorems-10k-wo-self-refine.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-2-generalization/stats/config_0728-cqadupstack-stats-10k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/0618-80k/config-0618-ori-13804.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/0618-80k/config-0618-ori-80k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/0618-ori-80k/config-0618-ori-80k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/0624-gen-320k/config-0624-gen-320k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0508-msmarco-data-size-scale-20k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0508-msmarco-data-size-scale-40k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0508-msmarco-data-size-scale-test.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0509-msmarco-data-size-scale-120k-150k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0509-msmarco-data-size-scale-150k-180k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0509-msmarco-data-size-scale-180k-210k-continue.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0509-msmarco-data-size-scale-180k-210k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0509-msmarco-data-size-scale-210k-240k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0509-msmarco-data-size-scale-240k-270k-continue.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0509-msmarco-data-size-scale-240k-270k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0509-msmarco-data-size-scale-270k-300k-continue.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0509-msmarco-data-size-scale-270k-300k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0509-msmarco-data-size-scale-300k-330k-continue.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0509-msmarco-data-size-scale-300k-330k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0509-msmarco-data-size-scale-330k-360k-continue.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0509-msmarco-data-size-scale-330k-360k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/config_0509-msmarco-data-size-scale-60k-120k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/scale-size-of-backend-llm/msmarco/config-0714-msmarco-10k-deepseek-v4-flash.yaml",
+    "replacements": 15
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/scale-size-of-backend-llm/msmarco/config-0714-msmarco-10k-deepseek-v4-pro.yaml",
+    "replacements": 15
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/scale-size-of-backend-llm/synthetic-text2sql/config-0714-synthetic-text2sql-10k-deepseek-v4-flash.yaml",
+    "replacements": 15
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/scale-size-of-backend-llm/synthetic-text2sql/config-0714-synthetic-text2sql-10k-deepseek-v4-pro.yaml",
+    "replacements": 15
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/scale-size-of-backend-llm/theoremqa-theorem/config-0714-theoremqa-theorem-10k-deepseek-v4-flash.yaml",
+    "replacements": 15
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-3-scale/scale-size-of-backend-llm/theoremqa-theorem/config-0714-theoremqa-theorem-10k-deepseek-v4-pro.yaml",
+    "replacements": 15
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-4-ablation/config_0502-msmarco-ablation-0-dt-selection-dt-sample.yaml",
+    "replacements": 5
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-4-ablation/config_0502-msmarco-ablation-1-dt-selection-random-sample.yaml",
+    "replacements": 5
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-4-ablation/config_0505-msmarco-ablation-2-query-gen-instr.yaml",
+    "replacements": 5
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-4-ablation/config_0505-msmarco-ablation-3-idattr.yaml",
+    "replacements": 5
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-4-ablation/config_0505-msmarco-ablation-4-hard-neg-mining.yaml",
+    "replacements": 5
+  },
+  {
+    "path": "Main_Pipeline/config/RQ-4-ablation/config_0505-msmarco-ablation-5-without-self-refine.yaml",
+    "replacements": 5
+  },
+  {
+    "path": "Main_Pipeline/config/config-0531-dbpedia-production.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/config-0611-touche-10k-production.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/config-0614-fiqa-production.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/config-0614-scidocs-production.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/config-0615-nfcorpus-production.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/config-example.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/config-0606-msmarco-10k-gen.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/config-0606-msmarco-10k-ori.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/config-0606-touche-10k.yaml",
+    "replacements": 11
+  },
+  {
+    "path": "Main_Pipeline/config/config-0611-msmarco-10k-ori.yaml",
+    "replacements": 11
+  }
+]

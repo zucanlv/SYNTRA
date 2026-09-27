@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Human Annotation · LLM Evaluation</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/vendor/katex.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <script defer src="/vendor/katex.min.js"></script>
+    <script defer src="/vendor/auto-render.min.js"></script>
+    <script defer src="/app.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">HA</span>
+        <div>
+          <strong>Human Annotation</strong>
+          <span>LLM relevance evaluation</span>
+        </div>
+      </div>
+      <div class="session-meta">
+        <span id="annotator-id">正在连接…</span>
+        <span class="save-indicator" id="save-status" role="status">尚未修改</span>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <section class="progress-card" aria-label="标注进度">
+        <div class="progress-copy">
+          <span class="eyebrow">总体进度</span>
+          <strong id="overall-progress">0 / 150</strong>
+        </div>
+        <div class="progress-track" aria-hidden="true">
+          <span id="overall-progress-bar"></span>
+        </div>
+        <nav id="dataset-nav" class="dataset-nav" aria-label="数据集导航"></nav>
+      </section>
+
+      <section id="error-banner" class="error-banner" role="alert" hidden></section>
+      <section id="completion-banner" class="completion-banner" hidden>
+        <strong>全部完成</strong>
+        <span>150 条评分已经保存在本地 CSV。你仍可返回检查或修改。</span>
+      </section>
+
+      <div class="workspace">
+        <aside class="guideline-panel" aria-label="当前任务的原始标注说明">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">Original instruction</span>
+              <h2 id="guideline-title">标注说明</h2>
+            </div>
+            <span class="language-badge">EN 原文</span>
+          </div>
+          <p class="human-note">
+            请直接依据下方原始 instruction 判断。人工标注只需选择 0–3 分；无需输出其中要求的 JSON 或 reasoning。
+          </p>
+          <pre id="guideline-text" class="guideline-text">正在载入 instruction…</pre>
+        </aside>
+
+        <section class="annotation-panel" aria-label="当前标注样本">
+          <div class="sample-heading">
+            <div>
+              <span class="dataset-pill" id="dataset-name">—</span>
+              <span class="sample-position" id="sample-position">0 / 50</span>
+            </div>
+            <span class="sample-id" id="sample-id">—</span>
+          </div>
+
+          <article class="content-card query-card">
+            <div class="card-label">Query · 查询</div>
+            <div class="bilingual-content">
+              <section class="language-block" aria-label="Query 英文原文">
+                <span class="language-label">EN · 英文原文</span>
+                <div id="query-text" class="content-text">正在载入样本…</div>
+              </section>
+              <section class="language-block translation-block" aria-label="Query 中文翻译">
+                <span class="language-label translated">ZH · 中文翻译</span>
+                <div id="query-translation" class="content-text translated-text"></div>
+              </section>
+            </div>
+          </article>
+
+          <article class="content-card document-card">
+            <div class="card-label">Document · 文档</div>
+            <div class="bilingual-content">
+              <section class="language-block" aria-label="Document 英文原文">
+                <span class="language-label">EN · 英文原文</span>
+                <pre id="document-text" class="content-text document-text"></pre>
+              </section>
+              <section class="language-block translation-block" aria-label="Document 中文翻译">
+                <span class="language-label translated">ZH · 中文翻译</span>
+                <pre id="document-translation" class="content-text document-text translated-text"></pre>
+              </section>
+            </div>
+          </article>
+
+          <p class="translation-note">
+            中文译文用于辅助理解；相关性判断请以英文原文、SQL 和公式为准。
+          </p>
+
+          <section class="scoring-card" aria-labelledby="score-heading">
+            <div class="score-intro">
+              <div>
+                <span class="eyebrow">Your judgment</span>
+                <h2 id="score-heading">选择一个分数</h2>
+              </div>
+              <span class="keyboard-hint">键盘 0–3</span>
+            </div>
+            <div id="score-buttons" class="score-buttons" role="group" aria-label="相关性分数"></div>
+          </section>
+
+          <nav class="sample-nav" aria-label="样本导航">
+            <button id="previous-button" class="secondary-button" type="button">← 上一条</button>
+            <button id="unanswered-button" class="secondary-button emphasized" type="button">下一条未标注</button>
+            <button id="next-button" class="secondary-button" type="button">下一条 →</button>
+          </nav>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

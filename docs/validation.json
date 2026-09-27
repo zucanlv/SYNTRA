@@ -1,0 +1,38 @@
+{
+  "copied_source_files": 853,
+  "python_files": 404,
+  "shell_files": 278,
+  "python_syntax_errors": [],
+  "shell_syntax_errors": [],
+  "credential_pattern_findings": [],
+  "prohibited_data_files": [],
+  "symlinks": [],
+  "source_changes_during_copy": [],
+  "local_imports_missing": [],
+  "files_with_lab_paths": 418,
+  "total_files": 863,
+  "total_bytes": 7446947,
+  "offline_tests": [
+    {
+      "test": "test_merge_pipeline_json.py",
+      "exit_code": 0,
+      "output": ".\n----------------------------------------------------------------------\nRan 1 test in 0.059s\n\nOK\n"
+    },
+    {
+      "test": "test_split_queries_by_position.py",
+      "exit_code": 0,
+      "output": ".\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nOK\n"
+    }
+  ],
+  "yaml_files": 95,
+  "yaml_errors": [],
+  "test_environment_note": "Initial invocation lacked python on PATH for subprocess tests; rerun with the synthesis environment bin directory on PATH.",
+  "explicit_reference_closure_added": [
+    "Main_Pipeline/config/config-0606-msmarco-10k-gen.yaml",
+    "Main_Pipeline/config/config-0606-msmarco-10k-ori.yaml",
+    "Main_Pipeline/config/config-0606-touche-10k.yaml",
+    "Main_Pipeline/config/config-0611-msmarco-10k-ori.yaml",
+    "Main_Pipeline/corpus_preprocess/4-21-count-training-data-pos-neg.py",
+    "Main_Pipeline/corpus_preprocess/4-27-compile-training-set-query-length.py"
+  ]
+}

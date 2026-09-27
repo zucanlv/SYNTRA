@@ -1,0 +1,128 @@
+# SciRepEval Search synthetic retrieval-data generation.
+# The corpus is the official Search train candidate pool. No document filtering,
+# query filtering, or diversity-based corpus selection is enabled.
+
+task: "scirepeval-search"
+
+# Official Search train candidates, flattened without content filtering.
+corpus_path: "/data/share/project/shared_datasets/DSA/datasets/scirepeval-search/search-train-corpus.jsonl"
+corpus_format: "jsonl"
+faiss_dir: "/data/share/project/shared_datasets/DSA/faiss/scirepeval-search"
+
+embedding_model_name: "BAAI/bge-m3"
+embedding_model_path: "/data/share/project/shared_models/bge-m3"
+
+# Build and query the index over the complete corpus.
+index_batch_size: 32
+index_num_gpus: 6
+index_gpu_ids: [0, 1, 2, 3, 4, 5]
+index_use_faiss_gpu: true
+index_faiss_gpu_float16: true
+index_id_column: "doc_id"
+index_text_column: "text"
+# text already contains title </s> abstract </s> venue </s> year.
+index_title_column: ""
+
+# Export every indexed document. These options deliberately do not select or
+# discard documents from the corpus.
+use_diverse_selection: false
+num_diverse_passages: null
+cosine_similarity_threshold: 0.6
+top_k: 2000
+diverse_selection_gpu_ids: [0, 1, 2, 3, 4, 5]
+
+queries_per_passage: 1
+idattr_resume_path: null
+
+top_k_candidates: 20
+q2p_batch_size: 8
+q2p_faiss_gpu: true
+q2p_gpu_ids: [0, 1, 2, 3, 4, 5]
+q2p_inject_origin_score: true
+q2p_lock_path: null
+
+step4_diverse_query_input: null
+step5_query2passage_input: null
+
+# With null endpoint/key values, the pipeline reads OPENAI_BASE_URL and
+# OPENAI_API_KEY from the environment. No credentials are stored in this file.
+llm_model: "openai/gpt-4.1-mini"
+llm_model_server: null
+llm_api_key: null # Supply credentials through environment variables
+llm_client_pool:
+  enabled: true
+  max_connections: 512
+  max_keepalive_connections: 128
+  force_nonstream: true
+
+fully_annotation: true
+max_queries: null
+candidates_num_each_anno: 4
+annotation_prompt_mode: "multi_doc_with_doc_id"
+hide_doc_id_for_single_doc: false
+
+concurrency:
+  enabled: true
+  max_workers: 128
+  jitter: 0.0
+
+origin_doc_annotation: false
+hn_top_k_candidates: 200
+hn_negative_number: 15
+hn_range_for_sampling: "30-200"
+
+ablation:
+  disable_query_instruction: false
+  disable_idattr: false
+
+instructions_store_dir: "/data/share/project/shared_datasets/DSA/others/Instructions/scirepeval-search"
+
+filtered_diverse_texts: null
+diverse_texts: null
+skip_index: false
+
+# Explicitly disabled: keep documents and generated queries unchanged by the
+# optional filtering stages.
+use_filter: false
+filter_batch_size: 3
+filter_inject_pos_examples: true
+filter_pos_examples_count: 3
+filter_pos_example_max_chars: 2000
+
+use_query_filter: false
+query_filter_batch_size: 10
+query_filter_inject_golden_queries: true
+query_filter_golden_query_count: 3
+query_filter_golden_query_max_chars: 300
+
+# A new task must first run instruction self-refinement. This mode still builds
+# the FAISS index from the entire corpus; only the expensive generation stages
+# are limited to five examples.
+test_mode: true
+test_sample_size: 5
+test_seed: 42
+human_review: false
+human_review_timeout: 10
+human_review_no_editor: false
+
+# Intentionally left unset until the production experiment size is decided.
+# Sampling affects only origin documents used for synthesis, never the corpus
+# indexed for retrieval.
+production_sample:
+  enabled: false
+  mode: "random"
+  count: null
+  seed: 42
+  range: null
+  indices: null
+
+progress_log_interval_sec: 60
+
+query_length_control:
+  enabled: false
+  use_llm: false
+
+anno_self_refine_source: "fewshot_positive"
+anno_self_refine_max_attempts: 3
+anno_fewshot_calibration_count: null
+anno_calibration_path: null

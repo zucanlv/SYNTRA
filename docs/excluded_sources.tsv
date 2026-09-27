@@ -1,0 +1,127 @@
+source	decision
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/Integrated_Pipeline_Demo.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/case-study/4-12-case-study.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/case-study/4-16-compare-BM25-me-jianlv.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/case-study/5-16-debug/annotate_dbpedia_gold_cases.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/case-study/5-16-debug/annotate_mteb_gold_cases.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/RQ-3-scale/omit-config_0509-msmarco-data-size-scale-120k-240k.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/__init__.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config-0530-climate-fever-calibration-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config-0530-dbpedia-calibration-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config-0531-dbpedia-calibration-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config-0602-dbpedia-calibration-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config-0603-dbpedia-calibration-posneg-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config-0603-dbpedia-fewshot-calibration-production.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config-0603-dbpedia-fewshot-calibration-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config-0604-dbpedia-test-anno copy.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config-0611-touche-10k.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config-0614-fiqa-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config-0614-scidocs-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config-0615-nfcorpus-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0415-covid-retrieval-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0417-msmarco-10k.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0418-gen-msmarco-10k.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0418-ori-msmarco-10k.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0421-climate-fever-10k.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0421-climate-fever-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0422-dbpedia-10k.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0422-dbpedia-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0423-touche2020-10k.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0423-touche2020-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0425-gen-msmarco-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0426-trec-covid-10k.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0427-gen-msmarco-10k.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0427-gen-msmarco-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0429-dbpedia-10k.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0429-dbpedia-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0502-gen-msmarco-10k.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0502-gen-msmarco-test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0502-msmarco-ablation-0-dt-selection-dt-sample.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0502-msmarco-ablation-1-dt-selection-random-sample.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0505-msmarco-ablation-2-query-gen-instr.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0505-msmarco-ablation-3-idattr.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0505-msmarco-ablation-4-hard-neg-mining.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_0505-msmarco-ablation-5-without-self-refine.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/config/config_hnmine_test.yaml	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/4-18-74k-dt-adapt-new-dt.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/4-18-qpos-adapt-new-qpos.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/4-18-qpos2dt.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/4-19-exclude-ori-doc.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/4-24-exclude-filtered-query.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/4-25-print-queries-from-training-set.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/5-02-compile-diverse-query-length.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/5-09-compile-dbpedia-query-length.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/5-16-compile-msmarco-dev-query-length.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/6-03-compile-mteb-dbpedia-split-query-length.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/Misc/Batch_Triplet_Evaluator.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/Misc/Collection2FlagEmbeddingHnMine_CandidatePool.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/Misc/FlagEmbedding_hnmine_to_trianing_data.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/Misc/Jianlv-BM25-hnmine2trainingdata.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/Misc/LookAtFaiss.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/Misc/Passage_Diverse_Selection_BF.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/Misc/Triplet_Organize.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/Misc/msmarco_FlagEmbeddingCandidatePool2BM25Corpus.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/Misc/qpos2FlagEmbeddingHnMineInput.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/Misc/run_timing_start_gen_74k_hnmine.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/Misc/timing_start_gen_74k_hnmine.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/Misc/timing_start_trianing_corpus_74k_hnmine.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/before/Integrate0402.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/before/check_texts_align.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/before/convert_docid.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/before/diversetexts2querypos.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/before/download-mteb-dataset-hf.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/before/find_v0-raw-queries.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/before/get_all_74k_gen_anno.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/before/integrate_offset_and_v0.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/before/remove-origin-doc-msmarco-trianing.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/before/sample10k_msmarco.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/before/sample_msmarco_origin_BM25_hnmine.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/before/split_input_step4.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/before/stats_0330.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/before/test_trianing.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/corpus_preprocess/before/training2corpus_msmarco.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/test.py	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/run-scripts/0516-run-mteb-gold-analysis.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/run-scripts/0518-run-climate-fever-100doc-model-compare.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/run-scripts/0518-run-dbpedia-100doc-model-compare.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/run-scripts/0526-run-msmarco-one-doc-gold-analysis.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/run-scripts/0526-run-non-msmarco-cand1-gold-analysis.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/run-scripts/0530-run-climate-fever-annoinstr.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/run-scripts/0530-run-dbpedia-annoinstr-cand1.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/run-scripts/0531-run-dbpedia-annoinstr-attempts-dev.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/run-scripts/0602-run-dbpedia-annoinstr-attempts-dev-multidoc4.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/run-scripts/0603-run-dbpedia-151547-annoinstr-attempts-dev-multidoc4.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/run-scripts/0603-run-dbpedia-selected-annoinstr-dev-multidoc4.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/run-scripts/0604-run-dbpedia-night-experiment.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/run-scripts/0627-run-bright-documents-encode-test.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/run-scripts/run-generalization-0508.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/zucan/Synthetic_Data_code/SyntheticDataResearch/run-scripts/run-generalization-0509.sh	Excluded: exploratory, superseded, demo, or debugging source/config
+/data/share/project/tr/data_synthesis_agent/code/scripts/3-29	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/3-30	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/3-31	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/3-31-corpus	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-10	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-11	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-12	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-16	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-17	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-18	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-19	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-2	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-21	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-23	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-24	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-26	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-27	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-29	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-3	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-30	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-4	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-5	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-7	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-8	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/4-9	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/6-17-split	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/7-27-debug	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/8-1-debug	Excluded: early March/April experiments or explicit analysis/debug variants
+/data/share/project/tr/data_synthesis_agent/code/scripts/analysis	Excluded: early March/April experiments or explicit analysis/debug variants
