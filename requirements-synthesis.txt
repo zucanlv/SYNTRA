@@ -1,0 +1,16 @@
+# Direct dependency versions observed in the synthesis environment.
+# Python 3.10 / Linux. This is not a complete transitive lockfile.
+# Install PyTorch and ONE FAISS variant separately; see docs/INSTALL.md.
+qwen-agent==0.0.34
+openai==2.6.1
+httpx==0.28.1
+transformers==4.57.1
+sentence-transformers==5.1.2
+datasets==3.6.0
+numpy==1.26.4
+pandas==2.3.3
+pyarrow==23.0.1
+json5==0.13.0
+ijson==3.5.0
+PyYAML==6.0.1
+tqdm>=4.66,<5

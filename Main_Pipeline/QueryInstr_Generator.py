@@ -36,16 +36,18 @@ from HighLevel_Def import HighLevel_Task_Definition
 # Logging
 # ---------------------------------------------------------------------------
 
-os.makedirs("Logs", exist_ok=True)
+# The pipeline entry point owns logging when this module is imported.
+if __name__ == "__main__":
+    os.makedirs("Logs", exist_ok=True)
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.FileHandler(f"Logs/QueryInstr_Generator_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"),
-        logging.StreamHandler(),
-    ],
-)
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s - %(levelname)s - %(message)s",
+        handlers=[
+            logging.FileHandler(f"Logs/QueryInstr_Generator_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"),
+            logging.StreamHandler(),
+        ],
+    )
 
 
 # ---------------------------------------------------------------------------

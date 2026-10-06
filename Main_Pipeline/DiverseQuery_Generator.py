@@ -21,18 +21,20 @@ from Few_Shot_Formatter import format_examples, get_examples
 from HighLevel_Def import HighLevel_Task_Definition
 
 # Ensure log/output dirs exist before FileHandler is created
-os.makedirs("Logs", exist_ok=True)
-os.makedirs("Results", exist_ok=True)
+# The pipeline entry point owns logging when this module is imported.
+if __name__ == "__main__":
+    os.makedirs("Logs", exist_ok=True)
+    os.makedirs("Results", exist_ok=True)
 
-# Configure logging to write to both a file and the console
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler(f"Logs/DiverseQuery_Generator_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"),
-        logging.StreamHandler()
-    ]
-)
+    # Configure logging to write to both a file and the console
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(f"Logs/DiverseQuery_Generator_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"),
+            logging.StreamHandler()
+        ]
+    )
 
 def _safe_json5_loads(text: str) -> Dict[str, Any]:
     try:

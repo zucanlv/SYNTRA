@@ -1,31 +1,63 @@
-# SYNTRA — code release staging
+# SYNTRA
 
-SYNTRA adapts a shared agentic retrieval-data synthesis framework to different tasks using few-shot-guided self-refinement.
+SYNTRA uses few-shot-guided self-refinement to adapt a shared agentic framework
+for retrieval training-data synthesis.
 
-This directory is the first curated code-only snapshot. It is not yet a validated portable installation or a published GitHub repository.
+This release preserves the research workflow: define a task and its few-shot
+examples, configure the existing pipeline, refine instructions on a small sample,
+then reuse those instructions for production and export training records.
 
-## Code map
+## Start here
 
-- `Main_Pipeline/main.py`: current end-to-end synthesis entry point.
-- `Main_Pipeline/`: few-shot/task definitions, instruction refinement, query synthesis, corpus indexing, relevance annotation, hard-negative mining, streaming and concurrency utilities.
-- `Main_Pipeline/config/`: representative production, cross-task, scaling and ablation configurations.
-- `Main_Pipeline/corpus_preprocess/` and `data_scripts/`: corpus adapters, training-data conversion, merging, sampling and dataset packaging code.
-- `Main_Pipeline/test/`: existing regression and adapter checks. Some require external datasets, models or services.
-- `run-scripts/`: synthesis and paper experiment launchers.
-- `training_eval/code/`: shared evaluation implementation and retained paper training/evaluation recipes.
-- `evaluation/`: SciRepEval full-corpus evaluation and MTEB/NanoBEIR support.
-- `third_party/FlagEmbedding/`: source snapshot of the locally modified framework used for training/evaluation, plus the COIR evaluator. Its original license is retained.
-- `human_evaluation/`: relevance annotation application and agreement-analysis code; annotation samples and responses are excluded.
-- `docs/`: file-level provenance, exclusions, source versions, sanitization and validation records.
+1. [Install the synthesis environment](docs/INSTALL.md).
+2. [Run the original workflow](docs/ORIGINAL_WORKFLOW.md).
+3. Copy `Main_Pipeline/config/delivery/msmarco-from-corpus.yaml` to a local
+   configuration and replace its marked paths and served-model name.
+4. From `Main_Pipeline`, check the configuration and run refinement:
 
-## Data boundary
+```bash
+python ../scripts/check_delivery.py --config config/local.yaml --phase refine --check-imports
+python main.py --config config/local.yaml --test-mode
+```
 
-Generated training data, raw corpora, retrieval indices, checkpoints, annotation records, cached outputs and run logs are not included. Datasets will be released separately on Hugging Face; no dataset repository has been created in this step. Task definitions and the small few-shot examples embedded in Python are retained as algorithm inputs. The only copied JSON file is the DeepSpeed configuration; JSON files under `docs/` are release metadata.
+Read the workflow guide before running these commands. `--test-mode` makes real
+model calls and still indexes the supplied corpus; start with a small corpus.
+Review the results and follow the guide for production and training-data export.
+API keys belong in the environment, not configuration files or commits.
 
-## Before running
+The template uses the original MS MARCO pipeline settings with explicit deployment
+adjustments. Historical experiment configurations and default algorithms are
+preserved. This is not an automatic new-task API: custom tasks still require
+entries in `HighLevel_Def.py` and `Few_Shot_Example.py`, as shown in the guide.
 
-The original experiment layout and parameters are preserved for traceability. Many scripts/configurations still contain lab-specific absolute data, model, environment and source paths. Adapt them before execution; do not run the historical launchers unchanged. Global LLM credentials can be supplied through `OPENAI_API_KEY`, and the endpoint through `OPENAI_BASE_URL`; copied YAML credential values have been cleared. Some standalone scripts still require their credential setup to be converted to environment variables.
+## Repository map
 
-The main entry point accepts `--config`. Run it from `Main_Pipeline` after configuring external corpus/model paths and the relevant Python dependencies. Refine instructions in test mode before a production run that reuses them. The historical `config-example.yaml` is a parameter reference, not a ready-to-run demo.
+| Directory | Purpose |
+| --- | --- |
+| `Main_Pipeline/` | Original synthesis pipeline and task definitions |
+| `Main_Pipeline/config/delivery/` | Starting configuration for the documented original workflow |
+| `Main_Pipeline/config/` | Preserved experiment configurations |
+| `Main_Pipeline/corpus_preprocess/`, `data_scripts/` | Corpus preparation, conversion, merging and sampling |
+| `run-scripts/`, `training_eval/` | Historical generation, training and evaluation recipes; adapt lab paths before use |
+| `evaluation/` | SciRepEval and MTEB/NanoBEIR support |
+| `third_party/FlagEmbedding/` | Locally modified research framework snapshot and retained upstream license |
+| `human_evaluation/` | Human relevance evaluation and agreement-analysis code |
+| `tests/`, `Main_Pipeline/test/` | Delivery checks and existing regression/adapter tests |
+| `docs/` | Usage, provenance, observed environments and validation |
 
-See `docs/RELEASE_NOTES.md` for the remaining packaging work and the limits of validation. No new project license has been selected; upstream licenses apply to retained third-party code.
+## Data and validation
+
+Raw corpora, generated datasets, checkpoints, indices, annotation responses and run
+logs are excluded. Datasets are planned for a separate Hugging Face release; no
+placeholder dataset ID is presented as available. The embedded few-shot examples
+remain part of the task configuration.
+
+See [delivery validation](docs/DELIVERY_VALIDATION.md) for the checks actually run.
+The `file_manifest.json` and original `validation.json` describe the initial
+September 27 source snapshot; later delivery changes are tracked by Git and the
+new validation note. They are not a current dependency lockfile or live checksum
+inventory.
+
+The main project license is still to be selected. Retained third-party license
+files apply to their corresponding code; the repository does not yet declare a
+blanket license for all contents.

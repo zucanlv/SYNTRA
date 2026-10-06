@@ -1,0 +1,84 @@
+# From-corpus template for the ORIGINAL main.py interface.
+# Copy to config/local.yaml; see docs/ORIGINAL_WORKFLOW.md for required edits.
+# Source: config/config-0606-msmarco-10k-gen.yaml.
+# No shell-variable expansion in YAML. Credentials come from the environment.
+task: "msmarco"           # 任务名，需在 HighLevel_Task_Definition 中有对应定义
+corpus_path: "/REPLACE_WITH_YOUR_DATA/corpus.jsonl"
+corpus_format: "auto"     # auto | tsv | csv | jsonl | parquet | hf_dataset
+faiss_dir: "/REPLACE_WITH_YOUR_OUTPUT/index"
+embedding_model_name: "BAAI/bge-m3"
+embedding_model_path: null
+index_batch_size: 16           # 编码时每批次的文档数
+index_num_gpus: 1               # 并行编码使用的 GPU 数量（与 index_gpu_ids 二选一）
+index_gpu_ids: [0]             # 显式指定 GPU ID 列表，如 [0,1,2,3]；null 则按 index_num_gpus 自动分配前 index_num_gpus 个 GPU; 优先级高于 index_num_gpus
+index_use_faiss_gpu: false
+index_faiss_gpu_float16: true   # FAISS GPU 模式是否使用 float16（节省显存，略微降低精度）
+index_id_column: null           # 语料 ID 列名；null = 自动检测
+index_text_column: null         # 语料正文列名；null = 自动检测
+index_title_column: null        # 语料标题列名；null = 自动检测，"" = 不使用标题
+use_diverse_selection: false
+num_diverse_passages: null      # 目标选取条数；null = 贪心选取（无上限）
+cosine_similarity_threshold: 0.6
+top_k: 2000                     # DiverseSelection 每次迭代中检索的邻居数量（越大越精确，越慢）
+diverse_selection_gpu_ids: [-1]
+queries_per_passage: 1          # 每条文档生成的 query 数量
+top_k_candidates: 20            # 每个 query 检索的候选段落数
+q2p_batch_size: 8              # query 编码时每批次的数量
+q2p_faiss_gpu: false
+q2p_gpu_ids: [0]
+q2p_inject_origin_score: true        # 在 Step 4 同步计算 origin doc 的精确余弦分并写入 q_obj["pos_score"]，供 Step 5 HN Mine 使用；false 则沿用旧逻辑（is_original 候选 score 或代理分）
+q2p_lock_path: null
+step4_diverse_query_input: null
+step5_query2passage_input: null
+llm_model: "REPLACE_WITH_YOUR_SERVED_MODEL"
+llm_model_server: null
+llm_api_key: null
+llm_stages: {}
+fully_annotation: true
+max_queries: null               # 最多标注的 query 数量；null = 全部标注
+candidates_num_each_anno: 4  # 每次 LLM 标注调用传入的 candidates 数量；null = 全部一起标注（原行为）
+annotation_prompt_mode: multi_doc_with_doc_id  # multi_doc_with_doc_id=现有 doc_id 输入输出 schema；single_doc_no_doc_id=单 doc、LLM 不看/不输出 doc_id，pipeline 会强制 candidates_num_each_anno=1 并回填 doc_id
+hide_doc_id_for_single_doc: false  # 兼容实验开关：当 candidates_num_each_anno=1 时，不把 doc_id 送给 LLM，代码侧回填唯一 doc_id；推荐优先使用 annotation_prompt_mode=single_doc_no_doc_id
+concurrency:
+  enabled: true      # false = 完全串行（调试 / 精确复现运行顺序时使用）
+  max_workers: 4
+  jitter: 0.0        # 提交任务时的随机抖动（秒），用于分散请求、避免触发速率限制
+origin_doc_annotation: false
+hn_top_k_candidates: 200        # HN 挖掘时 Step 4（Query2Passage）检索的候选数量；Branch A 需要 200+
+hn_negative_number: 15          # 每条 query 目标挖掘的难负例数量
+hn_range_for_sampling: "30-200" # Branch A 采样的 rank 窗口（参考代码默认 30-200）
+ablation:
+  disable_query_instruction: false
+  disable_idattr: false
+instructions_store_dir: "/REPLACE_WITH_YOUR_OUTPUT/instructions/msmarco"
+filtered_diverse_texts: null
+diverse_texts: null
+skip_index: false
+use_filter: false               # true=执行 Step 2.5 DocType filter；false=跳过 filter，直接将 diverse_texts 送入 Step 3
+filter_batch_size: 3           # 每次 LLM 调用处理的文档数量；值越大吞吐越高，但单次 token 消耗增加
+use_query_filter: false          # true=执行 Step 3.5 Query filter；false=跳过，直接将 DiverseQuery 送入 Step 4
+query_filter_batch_size: 10     # 每次 LLM 调用处理的 query 数量；值越大吞吐越高，但单次 token 消耗增加
+query_filter_inject_golden_queries: true  # true=将 Few_Shot_Example 中的 query 作为"风格金标准"注入 filter prompt
+query_filter_golden_query_count: 3        # 最多注入多少条 golden query 示例；过多会增加 prompt token
+query_filter_golden_query_max_chars: 200  # 每条 golden query 保留的最大字符数
+test_mode: false
+test_sample_size: 5             # test_mode 为 true 时参与 Step 3 的多样文本条数
+test_seed: 42                   # test_mode 时的随机种子，便于复现
+human_review: false             # test_mode 为 true 时，是否启用人工复核交互
+human_review_timeout: 10        # PASS 覆盖提示等待秒数；超时后沿用 LLM 判定
+human_review_no_editor: false   # true=不打开 $EDITOR，直接从 stdin 读取多行输入
+production_sample:
+  enabled: false     # true = 启用采样；false = 使用全部文档（默认）
+  mode: "random"        # 采样模式：random | range | indices
+  count: 10000
+  seed: 42
+  range: "0-99"
+  indices: null
+progress_log_interval_sec: 60
+query_length_control:
+  enabled: false   # true = 启用；false = 关闭（默认，与旧版行为一致）
+  use_llm: false   # true = 用 LLM（queryinstr 模型）生成语义化 bucket 描述；false = 纯统计路径（更快）
+anno_self_refine_source: "fewshot_positive"
+anno_self_refine_max_attempts: 5   # 包含初始评估；1 = 只评估不 refine
+anno_fewshot_calibration_count: null  # fewshot_positive 模式下使用多少条 few-shot query-positive；null = 使用全部可用样本
+anno_calibration_path: null

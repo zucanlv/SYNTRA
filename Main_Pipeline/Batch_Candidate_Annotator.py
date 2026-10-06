@@ -24,17 +24,19 @@ from q2p_json_stream import LARGE_Q2P_BYTES
 # Directory where AnnoInstr_Generator saves instructions (assume it has already been run).
 INSTRUCTIONS_DIR = Path(__file__).resolve().parent / "Results" / "Instructions"
 
-os.makedirs("Logs", exist_ok=True)
+# The pipeline entry point owns logging when this module is imported.
+if __name__ == "__main__":
+    os.makedirs("Logs", exist_ok=True)
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler(f"Logs/Batch_Candidate_Annotator_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"),
-        logging.StreamHandler()
-    ]
-)
+    # Configure logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(f"Logs/Batch_Candidate_Annotator_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"),
+            logging.StreamHandler()
+        ]
+    )
 
 @register_tool('batch_candidate_annotator')
 class BatchCandidateAnnotator(BaseTool):
