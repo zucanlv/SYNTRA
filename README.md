@@ -7,6 +7,11 @@ This release preserves the research workflow: define a task and its few-shot
 examples, configure the existing pipeline, refine instructions on a small sample,
 then reuse those instructions for production and export training records.
 
+## Paper and resources
+
+- [Manuscript PDF](paper/SYNTRA.pdf) (draft, 6 October 2026).
+- [Project page](https://zucanlv.github.io/SYNTRA/).
+
 ## Start here
 
 1. [Install the synthesis environment](docs/INSTALL.md).
