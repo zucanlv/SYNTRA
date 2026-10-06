@@ -4,8 +4,8 @@
 
 - Title: *Self-improving data synthesis scales embedding models across domains and tasks*
 - Authors: Zucan Lyu, Rui Tang, Jianlyu Chen and Defu Lian.
-- Overleaf source revision: `a3ae752bf0d4d366b5a060fec5708d997e52d5ad`.
+- Overleaf source revision: `79a8c2218325136ba178c2292c3c769b37e5ae3d`.
 - PDF: 29 pages, exported from the successful Overleaf compilation (0 errors, 0 warnings).
-- SHA-256: `30d5abca2283522fcdf930f7ce38ae509317c2212590d56f6af63d9695f5b2a2`.
+- SHA-256: `4ecd0c92353088472143e4db3fb514ca9b25faf0490df5541e966845232158fa`.
 
-[Project page](https://zucanlv.github.io/SYNTRA/) · [Code](https://github.com/zucanlv/SYNTRA)
+[Project page](https://zucanlv.github.io/SYNTRA/) · [Code](https://github.com/zucanlv/SYNTRA) · [Data](https://huggingface.co/datasets/ZucanLyu/SYNTRA)
