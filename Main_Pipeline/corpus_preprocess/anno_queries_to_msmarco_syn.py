@@ -26,7 +26,8 @@ from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
-_PROJECT_ROOT = Path(__file__).resolve().parents[5]
+# Historical defaults; explicit --input/--output work at any checkout depth.
+_PROJECT_ROOT = Path("/data/share/project")
 DEFAULT_INPUT = (
     _PROJECT_ROOT
     / "zucan/Synthetic_Data_code/SyntheticDataResearch/Main_Pipeline/Results"

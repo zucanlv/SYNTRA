@@ -10,17 +10,19 @@ from qwen_agent.tools.base import BaseTool, register_tool
 from HighLevel_Def import HighLevel_Task_Definition
 from datetime import datetime
 
-os.makedirs("Logs", exist_ok=True)
+# The pipeline entry point owns logging when this module is imported.
+if __name__ == "__main__":
+    os.makedirs("Logs", exist_ok=True)
 
-# Configure logging to write to both a file and the console
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler(f"Logs/AnnoInstr_Generator_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"),
-        logging.StreamHandler()
-    ]
-)
+    # Configure logging to write to both a file and the console
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(f"Logs/AnnoInstr_Generator_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"),
+            logging.StreamHandler()
+        ]
+    )
 
 ANNOTATION_PROMPT_MODE_MULTI_DOC_WITH_DOC_ID = "multi_doc_with_doc_id"
 ANNOTATION_PROMPT_MODE_SINGLE_DOC_NO_DOC_ID = "single_doc_no_doc_id"

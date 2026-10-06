@@ -14,14 +14,18 @@ from qwen_agent.tools.base import BaseTool, register_tool
 from Few_Shot_Example import Few_Shot_Example
 from HighLevel_Def import HighLevel_Task_Definition
 
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler(f"Results/Logs/DocType_Filter_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"),
-        logging.StreamHandler()
-    ]
-)
+# The pipeline entry point owns logging when this module is imported.
+if __name__ == "__main__":
+    os.makedirs("Results/Logs", exist_ok=True)
+
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(f"Results/Logs/DocType_Filter_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"),
+            logging.StreamHandler()
+        ]
+    )
 
 @dataclass
 class FilterConfig:
