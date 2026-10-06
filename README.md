@@ -11,6 +11,7 @@ then reuse those instructions for production and export training records.
 
 - [Manuscript PDF](paper/SYNTRA.pdf) (draft, 6 October 2026).
 - [Project page](https://zucanlv.github.io/SYNTRA/).
+- [Public data archive](https://huggingface.co/datasets/ZucanLyu/SYNTRA).
 
 ## Start here
 
@@ -53,9 +54,12 @@ entries in `HighLevel_Def.py` and `Few_Shot_Example.py`, as shown in the guide.
 ## Data and validation
 
 Raw corpora, generated datasets, checkpoints, indices, annotation responses and run
-logs are excluded. Datasets are planned for a separate Hugging Face release; no
-placeholder dataset ID is presented as available. The embedded few-shot examples
-remain part of the task configuration.
+logs are excluded from this code repository. Retrieval-training data exports are
+publicly available in the [SYNTRA data archive](https://huggingface.co/datasets/ZucanLyu/SYNTRA).
+The archive includes synthetic-query data, original-query controls and historical
+experimental variants; consult its manifest and dataset card before selecting
+files. Source benchmark text remains subject to its original terms. The embedded
+few-shot examples remain part of the task configuration.
 
 See [delivery validation](docs/DELIVERY_VALIDATION.md) for the checks actually run.
 The `file_manifest.json` and original `validation.json` describe the initial
