@@ -7,4 +7,4 @@
 
 The corresponding source builders and input formatters are in `Main_Pipeline/HighLevel_Generator.py`, `IdAttr_Generator.py`, `QueryInstr_Generator.py`, `DiverseQuery_Generator.py`, `AnnoInstr_Generator.py`, `AnnoCalibration_Generator.py`, `Batch_Candidate_Annotator.py`, `Few_Shot_Formatter.py`, `Few_Shot_Example.py` and `DocType_Filter.py`.
 
-Prompt text is preserved rather than retrospectively edited. These JSON files retain punctuation and branch-specific output contracts; outer blank-line spacing follows the displayed archive. The source builders specify exact whitespace. The PDF uses typographic wrapping and shared display blocks to avoid repeating identical content.
+These JSON files retain punctuation and branch-specific output contracts; outer blank-line spacing follows the displayed archive. The source builders specify exact whitespace. The PDF uses typographic wrapping and shared display blocks to avoid repeating identical content.

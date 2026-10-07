@@ -457,7 +457,7 @@ You are a world-class synthetic query writer for information retrieval.
 {{
   "queries": [
     {{
-      "query": "string (one query in English)",
+      "query": "string (one query matching the task-specified query type)",
       "used_identifier": ["identifier string"],
       "used_attributes": {{
         "dimension name": "one option",
@@ -513,7 +513,7 @@ You are a world-class synthetic query writer for information retrieval.
 {{
   "queries": [
     {{
-      "query": "string (one query in English)"
+      "query": "string (one query matching the task-specified query type)"
     }}
   ]
 }}

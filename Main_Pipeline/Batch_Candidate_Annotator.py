@@ -416,7 +416,7 @@ class BatchCandidateAnnotator(BaseTool):
                 if attempt < max_retries:
                     logging.warning(f"Parse failed, retrying (attempt {attempt + 1})...")
                     messages.append({'role': 'assistant', 'content': result_text})
-                    messages.append({'role': 'user', 'content': "Your output was not a valid JSON or was missing required fields. Please output ONLY the strictly valid JSON object with annotations, positive_pids, hard_negative_pids, and easy_negative_pids as specified in the system instructions."})
+                    messages.append({'role': 'user', 'content': "Your output was not a valid JSON or was missing required fields. Please output ONLY the strictly valid JSON object with annotations, positive_doc_ids, hard_negative_doc_ids, and easy_negative_doc_ids as specified in the system instructions."})
                     self.stats['retries'] += 1
             except Exception as e:
                 logging.error(f"Error during annotation: {e}")

@@ -272,7 +272,7 @@ doc: {doc}
 
 ## Hard constraints
 - identifiers: 3-10 items; no duplicates/overlap; each must be a standalone anchor.
-- attributes: 3-7 dimensions total. Produce them by (1) using the example dimensions only as inspiration, (2) brainstorming from THIS document, then (3) filtering via the Scientific Approach. Each dimension unique; each must have 2-4 options.
+- attributes: 3-6 dimensions total. Produce them by (1) using the example dimensions only as inspiration, (2) brainstorming from THIS document, then (3) filtering via the Scientific Approach. Each dimension unique; each must have 2-4 options.
 - options must be mutually exclusive, actionable, and applicable to THIS document's domain/topic for practical query generation.
 
 ## JSON schema (fixed keys; output MUST follow exactly)
