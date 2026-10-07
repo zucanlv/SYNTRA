@@ -67,6 +67,10 @@ September 27 source snapshot; later delivery changes are tracked by Git and the
 new validation note. They are not a current dependency lockfile or live checksum
 inventory.
 
-The main project license is still to be selected. Retained third-party license
-files apply to their corresponding code; the repository does not yet declare a
-blanket license for all contents.
+## License
+
+The original SYNTRA code and associated software documentation are released under
+the [MIT License](LICENSE). Third-party code retains its upstream licenses and
+attribution; see [third-party notices](THIRD_PARTY_NOTICES.md). The code license
+does not relicense the manuscript PDFs, datasets or benchmark-derived text and
+examples; those materials remain subject to their respective terms.
