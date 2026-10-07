@@ -4,13 +4,13 @@
 
 - Title: *Self-improving data synthesis scales embedding models across domains and tasks*
 - Authors: Zucan Lyu, Rui Tang, Jianlyu Chen and Defu Lian.
-- Overleaf source revision: `6d6e3dbd407d40d45ebca732d19f2a02fee89ad8`.
+- Overleaf source revision: `425bbd843bc3c29ec8d4ed0fa41ed7185c65502b`.
 - Build provenance: compiled locally from `SYNTRA.tex` and `supplementary_information.tex` in the Overleaf source project.
 
 | Download | Pages | SHA-256 |
 | --- | --- | --- |
-| [Manuscript PDF](SYNTRA.pdf) | 30 | `61d59cb62abc215594c5021cb4c0cb943a4d520d7f00a772bcbb626d2c686a06` |
-| [Supplementary Information PDF](supplementary_information.pdf) | 27 | `3bc38b8c2f4cc2fe11a94984ec2d918deaff51db56d37db378e204d3d9e274ed` |
+| [Manuscript PDF](SYNTRA.pdf) | 30 | `457b0bdbcd3f65b0219276bb1d44dc7731bf6f7d363a758c7303ec67e52062e8` |
+| [Supplementary Information PDF](supplementary_information.pdf) | 27 | `d1a5f07598f60fe8e31cb97c3390f5d1bdc2980e3448b97c8093d72ba3dc156d` |
 
 [Accompanying files for Supplementary Note 1](../docs/supplementary/) include the shared prompt templates, task descriptors and selected instruction records, including the FiQA refinement case.
 
