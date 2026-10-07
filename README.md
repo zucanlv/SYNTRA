@@ -9,7 +9,7 @@ then reuse those instructions for production and export training records.
 
 ## Paper and resources
 
-- [Manuscript PDF](paper/SYNTRA.pdf) (draft, 6 October 2026).
+- [Manuscript PDF](paper/SYNTRA.pdf) · [Supplementary Information PDF](paper/supplementary_information.pdf) (drafts, 7 October 2026) · [Supplementary Note 1 accompanying files](docs/supplementary/).
 - [Project page](https://zucanlv.github.io/SYNTRA/).
 - [Public data archive](https://huggingface.co/datasets/ZucanLyu/SYNTRA).
 

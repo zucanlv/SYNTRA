@@ -1,0 +1,231 @@
+{
+  "description": "Plain-text descriptors and available example metadata transcribed from the existing Supplementary Information. Presentation-only LaTeX markup is removed.",
+  "tasks": [
+    {
+      "task": "MS MARCO",
+      "query_type": "Web query",
+      "doc_type": "Web passage",
+      "relevance_definition": "Given a query (web query) and a document (web passage), the document is relevant to the query if the critical concepts or theories discussed in the document can provide references for domain experts to draft an answer to the query.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Dataset: MS MARCO; Configuration or artifact: triples.train.small.tsv; Split: train.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "LeCaRDv2",
+      "query_type": "Chinese Criminal Case Description",
+      "doc_type": "Chinese Criminal Judgment",
+      "relevance_definition": "Given a query (a Chinese criminal case description) and a document (a candidate Chinese criminal judgment), the document is relevant if legal experts consider it legally comparable to the query, taking into account the criminal charge and similarities in critical facts, constitutive elements of the offense, sentencing circumstances, procedural controversies, and overall legal relevance.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Not recorded in the released registry.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "FiQA",
+      "query_type": "Personal finance or investment question",
+      "doc_type": "Financial answer passage",
+      "relevance_definition": "Given a query (personal finance or investment question) and a document (financial answer passage), the document is relevant if it substantially addresses the specific financial scenario, decision, or concept raised by the query and provides information that would materially help answer the user's financial information need.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Not recorded in the released registry.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "SCIDOCS",
+      "query_type": "Scientific paper title",
+      "doc_type": "Scholarly article passage",
+      "relevance_definition": "Given a query (scientific paper title) and a document (scholarly article passage), the document is relevant if it describes a scientific work or foundational source that the query paper cites or would reasonably cite, including closely related prior work, methods, datasets, benchmark systems, theoretical background, or seminal work that directly supports, motivates, contextualizes, or is compared with the query paper.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Not recorded in the released registry.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "SciRepEval Search",
+      "query_type": "Scientific literature search query",
+      "doc_type": "Scientific paper title, abstract, venue, and publication year",
+      "relevance_definition": "Given a query (a scientific literature search query) and a document (a scientific paper represented by its title, abstract, venue, and publication year), the document is relevant if it directly satisfies the scientific information need expressed by the query, such as identifying a requested work or addressing the specified research topic, method, phenomenon, dataset, population, intervention, or outcome. Venue and year may help resolve publication-specific constraints, but do not by themselves make an otherwise topically unrelated paper relevant. A document that merely shares broad terminology while studying a different question or failing the query's specific constraints is insufficient.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Dataset: allenai/scirepeval; Configuration or artifact: search; Split: train.",
+      "source_comment_identifiers": [
+        "Example 1: 85673cf59c59d81726fdf7dddd22856d / 154914354\nExample 2: 0111231f8f765764f73b0acf3b0762d5 / 125696719\nExample 3: b2773d07fb2c9f25f3162dd24cd9b357 / 2691288\nExample 4: 3a43cce3db84ccdac71177d5e9043fc7 / 69164411\nExample 5: 4252e3db64583a73690b7fccbc31f132 / 13958297\n"
+      ]
+    },
+    {
+      "task": "CQADupStack-Stats",
+      "query_type": "Statistics Q&A question",
+      "doc_type": "Statistics Q&A forum post",
+      "relevance_definition": "Given a query (Statistics Q&A question) and a document (Statistics Q&A forum post), the document is relevant if it asks or addresses the same underlying statistical question or problem as the query. It should express an equivalent or near-duplicate information need, even if the wording, notation, dataset, or concrete example differs. Merely mentioning the same statistical method, analytical tool, or broad topic is not sufficient unless the document helps answer the query's specific concern.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Not recorded in the released registry.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "Natural Questions",
+      "query_type": "Natural-language factoid question",
+      "doc_type": "Wikipedia passage",
+      "relevance_definition": "Given a query (natural-language factoid question) and a document (Wikipedia passage), the document is relevant if it contains factual evidence that directly answers the question or provides the specific information needed to derive the answer. Merely discussing the same entity or broad topic without resolving the question is insufficient.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Dataset: mteb/nq; Split: test; Selection seed: 42.",
+      "source_comment_identifiers": [
+        "Example 1: test2619 / doc89759\nExample 2: test456 / doc16797\nExample 3: test102 / doc3294\nExample 4: test3037 / doc104077\nExample 5: test1126 / doc39696\n"
+      ]
+    },
+    {
+      "task": "CQADupStack-Physics",
+      "query_type": "Physics Q&A question",
+      "doc_type": "Physics Q&A forum post",
+      "relevance_definition": "Given a query (Physics Q&A question) and a document (Physics Q&A forum post), the document is relevant if it asks or addresses the same underlying physics question or problem as the query. It should express an equivalent or near-duplicate information need, even if the wording, notation, physical system, or concrete example differs. Merely mentioning the same physical concept, theory, or formula is not sufficient unless the document helps answer the query's specific concern.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Not recorded in the released registry.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "NFCorpus",
+      "query_type": "Non-technical health or nutrition query",
+      "doc_type": "Scientific medical article or biomedical research abstract",
+      "relevance_definition": "Given a query (non-technical health or nutrition query) and a document (scientific medical article or biomedical research abstract), the document is relevant if it provides scientific evidence, clinical or epidemiological findings, experimental results, or biomedical explanations that directly address or substantially inform the health, nutrition, disease, or dietary intervention topic raised by the query.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Not recorded in the released registry.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "EvidenceBench",
+      "query_type": "Biomedical scientific hypothesis",
+      "doc_type": "Sentence from a biomedical research paper",
+      "relevance_definition": "Given a query (a biomedical scientific hypothesis) and a document (a sentence from a biomedical research paper), the document is relevant if it reports a finding, observation, analysis, or conclusion that directly supports, contradicts, qualifies, or otherwise provides evidence about the relationship or outcome asserted by the hypothesis. Merely mentioning the same biomedical entities or broad topic is insufficient.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Dataset: EvidenceBench-100k; Split: train.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "MedicalQA",
+      "query_type": "English-language medical question",
+      "doc_type": "English-language medical answer passage",
+      "relevance_definition": "Given a query (an English-language medical question) and a document (an English-language medical answer passage), the document is relevant if it directly provides the specific medical information needed to answer the question, such as information about a disease, condition, symptom, drug, medical test, procedure, or treatment. Merely mentioning the same medical topic or entity without addressing the specific aspect asked about in the query is insufficient.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Dataset: mteb/medical_qa; Split: test.",
+      "source_comment_identifiers": [
+        "Example 1: d02b0cf8-a0f0-4508-acdc-37a6ff6a3f0c / bed2a585-886f-43ed-9ecd-6c60af9b9696\nExample 2: 0f6fcc6a-a221-49fc-bd65-c51459b722b9 / bb14fc4e-c6d3-4d64-add4-26ea26bb70fe\nExample 3: 7cd94a58-b4f4-4c04-a705-b2b6a9043a72 / 8f171388-acf3-4906-b379-8b1746456f2e\nExample 4: 25c8206a-1733-4616-8a86-4da10cb42601 / b26613b9-8006-47a3-bfc5-8ef00b79e580\nExample 5: 342be538-ac65-44cf-aa50-da4d1cb6e3f6 / 246f6a07-3510-47bf-8dcc-a88e301bc0e4\n"
+      ]
+    },
+    {
+      "task": "MedicalRetrieval",
+      "query_type": "Chinese-language medical or health question",
+      "doc_type": "Chinese-language medical answer passage",
+      "relevance_definition": "Given a query (Chinese-language medical or health question) and a document (Chinese-language medical answer passage), the document is relevant if it provides a direct and medically pertinent answer to the question or otherwise helps resolve the health concern expressed in the query.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Not recorded in the released registry.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "CodeTrans-DL",
+      "query_type": "TensorFlow Code Snippet",
+      "doc_type": "PaddlePaddle Code Snippet",
+      "relevance_definition": "Given a query (TensorFlow Code Snippet) and a document (PaddlePaddle Code Snippet), the document is relevant if it implements the same deep learning functionality as the query using PaddlePaddle APIs and conventions, making the two snippets functionally equivalent cross-framework counterparts.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Not recorded in the released registry.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "CosQA",
+      "query_type": "Natural language web query for code search",
+      "doc_type": "Python function implementation with optional documentation/comments",
+      "relevance_definition": "Given a query (Natural language web query for code search) and a document (Python function implementation with optional documentation/comments), the document is relevant if the code implementation and its internal documentation (docstrings) provide a direct, functional solution to the specific programming task or logic described in the query.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Not recorded in the released registry.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "Text2SQL",
+      "query_type": "Natural Language Database Query",
+      "doc_type": "SQL Query",
+      "relevance_definition": "Given a query (Natural Language Database Query) and a document (SQL Query), the document is relevant if it accurately and completely implements the database operation described in the query.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Not recorded in the released registry.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "BIRCO-relic",
+      "query_type": "Literary analysis excerpt with a masked quotation",
+      "doc_type": "Candidate passage from a literary work",
+      "relevance_definition": "Given a query (an excerpt of literary analysis containing a quotation replaced by '[masked sentence(s)]') and a document (a candidate passage from the analyzed literary work), the document is relevant if it can be naturally inserted at the masked position and directly supports at least one of the literary claims made in the surrounding context. Sharing the same work, characters, themes, or vocabulary without supporting the surrounding interpretation, or merely repeating content already present in the query, is insufficient.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Dataset: mteb/BIRCO-Relic-Test; Split: test; Selection seed: 42.",
+      "source_comment_identifiers": [
+        "Example 1: q_10200 / c_1706213\nExample 2: q_3721 / c_588391\nExample 3: q_14148 / c_2817930\nExample 4: q_15326 / c_3131160\nExample 5: q_9313 / c_1480007\n"
+      ]
+    },
+    {
+      "task": "TheoremQA questions",
+      "query_type": "Theorem-based STEM word problem",
+      "doc_type": "Solved STEM problem",
+      "relevance_definition": "Given a query (theorem-based STEM word problem) and a document (solved STEM problem), the document is relevant if it uses the same or a closely related theorem, principle, formula, or reasoning pattern required to solve the query, providing a worked example that can guide the solution.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Not recorded in the released registry.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "TheoremQA theorems",
+      "query_type": "Mathematical word problem",
+      "doc_type": "Mathematical theorem, definition, or proof",
+      "relevance_definition": "Given a query (mathematical word problem) and a document (mathematical theorem, definition, or proof), the document is relevant if it states, defines, or proves a theorem or mathematical principle that is used to derive the solution to the query.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Not recorded in the released registry.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "CQADupStack-Mathematica",
+      "query_type": "Mathematica Q&A question",
+      "doc_type": "Mathematica Q&A forum post",
+      "relevance_definition": "Given a query (Mathematica Q&A question) and a document (Mathematica Q&A forum post), the document is relevant if it asks or addresses the same underlying Mathematica or Wolfram Language question or problem as the query. It should express an equivalent or near-duplicate information need even if the wording, code, data, or concrete example differs. Merely mentioning the same function, symbol, or broad topic is insufficient unless the document helps resolve the query's specific concern.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Dataset: mteb/cqadupstack-mathematica; Split: test; Selection seed: 42.",
+      "source_comment_identifiers": [
+        "Example 1: 48681 / 3964\nExample 2: 9772 / 11155\nExample 3: 57366 / 57677\nExample 4: 32658 / 32378\nExample 5: 16429 / 7722\n"
+      ]
+    },
+    {
+      "task": "Touche2020",
+      "query_type": "Controversial Argumentative Question",
+      "doc_type": "Argumentative passage with reasoning",
+      "relevance_definition": "Given a query (Controversial Argumentative Question) and a document (Argumentative passage with reasoning), the document is relevant if it provides a comprehensive, logically structured argument or rebuttal that takes a clear stance on the topic, supporting its position with specific contentions, evidence, or reasoning.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Not recorded in the released registry.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "ArguAna",
+      "query_type": "Argumentative Claim",
+      "doc_type": "Counter-argument Passage",
+      "relevance_definition": "Given a query (argumentative claim) and a document (counter-argument passage), the document is relevant if it provides a valid, logically structured counter-argument that directly challenges, refutes, or offers a conflicting perspective to the central premise of the query.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Not recorded in the released registry.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "DBpedia-entity",
+      "query_type": "Entity-centric search query",
+      "doc_type": "Encyclopedic entity description",
+      "relevance_definition": "Given a query (entity-centric search query) and a document (encyclopedic entity description), the document is relevant if it provides a factual summary of a specific entity, instance, or concept that directly satisfies the categorical constraints and attributes specified in the query.",
+      "registered_examples": "6.",
+      "example_source_metadata": "Not recorded in the released registry.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "SpartQA",
+      "query_type": "Textual spatial scene followed by a multiple-choice question",
+      "doc_type": "Candidate spatial answer phrase",
+      "relevance_definition": "Given a query (a textual spatial scene followed by a multiple-choice question) and a document (a candidate spatial answer phrase), the document is relevant if it denotes an answer supported by the scene's stated spatial relations and valid inferences across objects and containers. If both choices satisfy the queried relation, each choice and 'both of them' are relevant; if neither does, 'none of them' is relevant. Mere object mention or lexical overlap is insufficient.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Dataset: mteb/SpartQA; Split: test; Selection seed: 42.",
+      "source_comment_identifiers": []
+    },
+    {
+      "task": "WinoGrande",
+      "query_type": "Commonsense fill-in-the-blank sentence",
+      "doc_type": "Candidate answer phrase",
+      "relevance_definition": "Given a query (a sentence containing one blank marked by an underscore) and a document (a candidate answer phrase), the document is relevant if inserting it into the blank yields the intended completion under the causal, physical, social, or temporal commonsense constraints of the full sentence. Grammatical compatibility or lexical association alone is insufficient.",
+      "registered_examples": "5.",
+      "example_source_metadata": "Dataset: mteb/WinoGrande; Split: test; Selection seed: 42.",
+      "source_comment_identifiers": []
+    }
+  ]
+}
