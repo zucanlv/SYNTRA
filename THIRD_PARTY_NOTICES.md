@@ -22,6 +22,6 @@ those terms.
 
 Dataset text and benchmark-derived few-shot examples are not covered by the code
 license. This includes example records in `Main_Pipeline/Few_Shot_Example.py` and
-the accompanying Supplementary Note 1 JSON files. The manuscript PDFs in `paper/`
-are also outside the code license. See the benchmark sources and the public data
+the accompanying Supplementary Note 1 JSON files. The manuscript, available on arXiv
+(arXiv:2610.14730), is also outside the code license. See the benchmark sources and the public data
 archive for the terms applicable to data and examples.
