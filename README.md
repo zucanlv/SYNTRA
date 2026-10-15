@@ -18,7 +18,8 @@ then reuse those instructions for production and export training records.
 
 - Paper: [arXiv:2610.14730](https://arxiv.org/abs/2610.14730) ([PDF](https://arxiv.org/pdf/2610.14730)). The arXiv version includes the Supplementary Information.
 - [Supplementary Note 1 accompanying files](docs/supplementary/).
-- [Project page](https://zucanlv.github.io/SYNTRA/).
+- [Project page](https://zucanlv.github.io/SYNTRA/) with [FAQ](https://zucanlv.github.io/SYNTRA/#faq).
+- [Paper summary](docs/PAPER_SUMMARY.md) and [key results as CSV](paper/key_results.csv).
 - [Public data archive](https://huggingface.co/datasets/ZucanLyu/SYNTRA).
 
 ## Start here
@@ -74,6 +75,10 @@ The `file_manifest.json` and original `validation.json` describe the initial
 September 27 source snapshot; later delivery changes are tracked by Git and the
 new validation note. They are not a current dependency lockfile or live checksum
 inventory.
+
+## Questions and contributions
+
+Questions, bug reports and results on new retrieval tasks are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md) and the [issue templates](https://github.com/zucanlv/SYNTRA/issues/new/choose).
 
 ## Citation
 
