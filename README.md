@@ -1,5 +1,12 @@
 # SYNTRA
 
+**Self-improving data synthesis enables scalable adaptation of embedding models**  
+Zucan Lyu, Rui Tang, Jianlyu Chen, Peisheng Jin and Defu Lian
+
+[![arXiv](https://img.shields.io/badge/arXiv-2610.14730-b31b1b.svg)](https://arxiv.org/abs/2610.14730)
+[![Project page](https://img.shields.io/badge/Project-page-blue)](https://zucanlv.github.io/SYNTRA/)
+[![Data](https://img.shields.io/badge/%F0%9F%A4%97%20Data-SYNTRA-yellow)](https://huggingface.co/datasets/ZucanLyu/SYNTRA)
+
 SYNTRA uses few-shot-guided self-refinement to adapt a shared agentic framework
 for retrieval training-data synthesis.
 
@@ -9,7 +16,8 @@ then reuse those instructions for production and export training records.
 
 ## Paper and resources
 
-- [Manuscript PDF](paper/SYNTRA.pdf) · [Supplementary Information PDF](paper/supplementary_information.pdf) (drafts, 7 October 2026) · [Supplementary Note 1 accompanying files](docs/supplementary/).
+- Paper: [arXiv:2610.14730](https://arxiv.org/abs/2610.14730) ([PDF](https://arxiv.org/pdf/2610.14730)). The arXiv version includes the Supplementary Information.
+- [Supplementary Note 1 accompanying files](docs/supplementary/).
 - [Project page](https://zucanlv.github.io/SYNTRA/).
 - [Public data archive](https://huggingface.co/datasets/ZucanLyu/SYNTRA).
 
@@ -66,6 +74,23 @@ The `file_manifest.json` and original `validation.json` describe the initial
 September 27 source snapshot; later delivery changes are tracked by Git and the
 new validation note. They are not a current dependency lockfile or live checksum
 inventory.
+
+## Citation
+
+If you use SYNTRA, its code or its data, please cite the paper:
+
+```bibtex
+@misc{lyu2026syntra,
+  title         = {Self-improving data synthesis enables scalable adaptation of embedding models},
+  author        = {Lyu, Zucan and Tang, Rui and Chen, Jianlyu and Jin, Peisheng and Lian, Defu},
+  year          = {2026},
+  eprint        = {2610.14730},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.IR},
+  doi           = {10.48550/arXiv.2610.14730},
+  url           = {https://arxiv.org/abs/2610.14730}
+}
+```
 
 ## License
 
