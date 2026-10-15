@@ -13,6 +13,7 @@ authors:
     given-names: Peisheng
   - family-names: Lian
     given-names: Defu
+doi: "10.5281/zenodo.23404376"
 repository-code: "https://github.com/zucanlv/SYNTRA"
 url: "https://zucanlv.github.io/SYNTRA/"
 license: MIT
