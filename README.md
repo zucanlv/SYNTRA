@@ -6,6 +6,7 @@ Zucan Lyu, Rui Tang, Jianlyu Chen, Peisheng Jin and Defu Lian
 [![arXiv](https://img.shields.io/badge/arXiv-2610.14730-b31b1b.svg)](https://arxiv.org/abs/2610.14730)
 [![Project page](https://img.shields.io/badge/Project-page-blue)](https://zucanlv.github.io/SYNTRA/)
 [![Data](https://img.shields.io/badge/%F0%9F%A4%97%20Data-SYNTRA-yellow)](https://huggingface.co/datasets/ZucanLyu/SYNTRA)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23404376.svg)](https://doi.org/10.5281/zenodo.23404376)
 
 SYNTRA uses few-shot-guided self-refinement to adapt a shared agentic framework
 for retrieval training-data synthesis.
