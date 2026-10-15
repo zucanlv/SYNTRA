@@ -1,0 +1,47 @@
+name: Bug report
+description: Something in the SYNTRA pipeline fails or behaves unexpectedly
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for trying SYNTRA. Please check [INSTALL.md](https://github.com/zucanlv/SYNTRA/blob/main/docs/INSTALL.md) and [ORIGINAL_WORKFLOW.md](https://github.com/zucanlv/SYNTRA/blob/main/docs/ORIGINAL_WORKFLOW.md) first.
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Pipeline stage
+      options:
+        - Installation / environment
+        - Corpus preprocessing and indexing
+        - Task definition and few-shot examples
+        - Test mode (self-improvement / refinement)
+        - Production mode (identifiers, queries, relevance labels)
+        - Converting annotations to training records
+        - Embedding-model training or evaluation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Include the full error message or traceback.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and configuration
+      description: The command you ran and the relevant parts of your config (remove secrets and private paths).
+      render: text
+  - type: input
+    id: model
+    attributes:
+      label: LLM used for synthesis
+      placeholder: e.g. Qwen3-30B-A3B served with vLLM
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: OS, Python version, GPU, torch / faiss versions
