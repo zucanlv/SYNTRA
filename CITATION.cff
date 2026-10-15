@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use SYNTRA, please cite the paper listed under preferred-citation."
+title: "SYNTRA"
+type: software
+authors:
+  - family-names: Lyu
+    given-names: Zucan
+  - family-names: Tang
+    given-names: Rui
+  - family-names: Chen
+    given-names: Jianlyu
+  - family-names: Jin
+    given-names: Peisheng
+  - family-names: Lian
+    given-names: Defu
+repository-code: "https://github.com/zucanlv/SYNTRA"
+url: "https://zucanlv.github.io/SYNTRA/"
+license: MIT
+keywords:
+  - information retrieval
+  - text embeddings
+  - synthetic data
+  - domain adaptation
+preferred-citation:
+  type: article
+  title: "Self-improving data synthesis enables scalable adaptation of embedding models"
+  authors:
+    - family-names: Lyu
+      given-names: Zucan
+    - family-names: Tang
+      given-names: Rui
+    - family-names: Chen
+      given-names: Jianlyu
+    - family-names: Jin
+      given-names: Peisheng
+    - family-names: Lian
+      given-names: Defu
+  year: 2026
+  journal: "arXiv preprint"
+  doi: "10.48550/arXiv.2610.14730"
+  url: "https://arxiv.org/abs/2610.14730"
+  identifiers:
+    - type: other
+      value: "arXiv:2610.14730"
+      description: "arXiv identifier"
