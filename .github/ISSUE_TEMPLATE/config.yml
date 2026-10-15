@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Paper (arXiv:2610.14730)
+    url: https://arxiv.org/abs/2610.14730
+    about: Method details, experiments and Supplementary Information.
+  - name: Project page and FAQ
+    url: https://zucanlv.github.io/SYNTRA/#faq
+    about: Common questions about inputs, outputs, compute and limitations.
