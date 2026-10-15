@@ -1,0 +1,43 @@
+experiment,setting,metric,condition,value,source
+self_improvement,NFCorpus,nDCG@10,initial instructions,24.828,Results: Self-improvement enhances the training value of synthetic data
+self_improvement,NFCorpus,nDCG@10,refined instructions,36.007,Results: Self-improvement enhances the training value of synthetic data
+self_improvement,FiQA,nDCG@10,initial instructions,28.873,Results: Self-improvement enhances the training value of synthetic data
+self_improvement,FiQA,nDCG@10,refined instructions,35.529,Results: Self-improvement enhances the training value of synthetic data
+self_improvement_vs_human,Text2SQL,nDCG@10,automatic self-improvement,62.240,Results: Self-improvement enhances the training value of synthetic data
+self_improvement_vs_human,Text2SQL,nDCG@10,human calibration,62.449,Results: Self-improvement enhances the training value of synthetic data
+self_improvement_vs_human,TheoremQA (theorems),nDCG@10,automatic self-improvement,22.199,Results: Self-improvement enhances the training value of synthetic data
+self_improvement_vs_human,TheoremQA (theorems),nDCG@10,human calibration,26.681,Results: Self-improvement enhances the training value of synthetic data
+query_source,BEIR mean (MS MARCO 10k source documents),nDCG@10,original human queries,42.18,Fig. 3c
+query_source,BEIR mean (MS MARCO 10k source documents),nDCG@10,SYNTRA queries,42.87,Fig. 3c
+query_source,NanoBEIR mean (MS MARCO 10k source documents),nDCG@10,original human queries,54.53,Fig. 3c
+query_source,NanoBEIR mean (MS MARCO 10k source documents),nDCG@10,SYNTRA queries,55.51,Fig. 3c
+label_quality,150 pairs (MS MARCO / Text2SQL / TheoremQA theorems),binary agreement (%),Qwen3-30B-A3B vs 7-annotator reference,91.3,Results: Generated labels agree with human relevance judgements
+label_quality,150 pairs,binary Cohen's kappa,Qwen3-30B-A3B vs 7-annotator reference,0.719,Results: Generated labels agree with human relevance judgements
+label_quality,150 pairs,three-class agreement (%),Qwen3-30B-A3B vs 7-annotator reference,68.7,Results: Generated labels agree with human relevance judgements
+label_quality,150 pairs,three-class Cohen's kappa,Qwen3-30B-A3B vs 7-annotator reference,0.510,Results: Generated labels agree with human relevance judgements
+label_quality,87 pairs labelled positive or hard negative,training-label precision (%),Qwen3-30B-A3B vs 7-annotator reference,82.8,Results: Generated labels agree with human relevance judgements
+strong_models_no_labels,LeCaRDv2,nDCG@10 gain over pretrained,BGE-M3,0.505,Results: Gains extend to widely used strong embedding models
+strong_models_no_labels,EvidenceBench,nDCG@10 gain over pretrained,BGE-M3,4.187,Results: Gains extend to widely used strong embedding models
+strong_models_no_labels,SciRepEval Search,nDCG@10 gain over pretrained,BGE-M3,0.820,Results: Gains extend to widely used strong embedding models
+strong_models_no_labels,LeCaRDv2,nDCG@10 gain over pretrained,Qwen3-Embedding-8B,3.255,Results: Gains extend to widely used strong embedding models
+strong_models_no_labels,EvidenceBench,nDCG@10 gain over pretrained,Qwen3-Embedding-8B,0.477,Results: Gains extend to widely used strong embedding models
+strong_models_no_labels,SciRepEval Search,nDCG@10 gain over pretrained,Qwen3-Embedding-8B,0.670,Results: Gains extend to widely used strong embedding models
+strong_models_with_labels,TheoremQA (questions),nDCG@10 gain over labelled-only fine-tuning,BGE-M3,7.237,Results: Gains extend to widely used strong embedding models
+strong_models_with_labels,SpartQA,nDCG@10 gain over labelled-only fine-tuning,BGE-M3,1.662,Results: Gains extend to widely used strong embedding models
+strong_models_with_labels,WinoGrande,nDCG@10 gain over labelled-only fine-tuning,BGE-M3,4.163,Results: Gains extend to widely used strong embedding models
+strong_models_with_labels,TheoremQA (questions),nDCG@10 gain over labelled-only fine-tuning,Qwen3-Embedding-8B,0.938,Results: Gains extend to widely used strong embedding models
+strong_models_with_labels,SpartQA,nDCG@10 gain over labelled-only fine-tuning,Qwen3-Embedding-8B,4.278,Results: Gains extend to widely used strong embedding models
+strong_models_with_labels,WinoGrande,nDCG@10 gain over labelled-only fine-tuning,Qwen3-Embedding-8B,0.887,Results: Gains extend to widely used strong embedding models
+scaling,MS MARCO (Qwen3-8B),nDCG@10,10000 examples,30.88,Results: Scaling synthetic data yields continued retrieval gains
+scaling,MS MARCO (Qwen3-8B),nDCG@10,320000 examples,33.20,Results: Scaling synthetic data yields continued retrieval gains
+ablation,NanoBEIR mean (13 tasks),nDCG@10,full workflow,54.64,Results: Core design choices improve retrieval performance
+ablation,NanoBEIR mean (13 tasks),nDCG@10,without semantic identifiers and query attributes,53.96,Results: Core design choices improve retrieval performance
+ablation,NanoBEIR mean (13 tasks),nDCG@10,without task-adapted query instruction,52.56,Results: Core design choices improve retrieval performance
+ablation,NanoBEIR mean (13 tasks),nDCG@10,hard-negative mining instead of relevance annotation,52.80,Results: Core design choices improve retrieval performance
+ablation,NanoBEIR mean (13 tasks),nDCG@10,plus source-document relevance annotation,53.75,Results: Core design choices improve retrieval performance
+queries_per_document,CodeTrans-DL,nDCG@10,1 query/document,37.048,Results: Core design choices improve retrieval performance
+queries_per_document,CodeTrans-DL,nDCG@10,2 queries/document,37.961,Results: Core design choices improve retrieval performance
+queries_per_document,CodeTrans-DL,nDCG@10,4 queries/document,38.374,Results: Core design choices improve retrieval performance
+queries_per_document,MedicalQA,nDCG@10,1 query/document,33.813,Results: Core design choices improve retrieval performance
+queries_per_document,MedicalQA,nDCG@10,2 queries/document,37.956,Results: Core design choices improve retrieval performance
+queries_per_document,MedicalQA,nDCG@10,4 queries/document,39.721,Results: Core design choices improve retrieval performance
