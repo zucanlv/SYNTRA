@@ -1,0 +1,27 @@
+name: Applying SYNTRA to a new retrieval task
+description: Questions or results from using SYNTRA on your own corpus, domain or task
+labels: [new-task]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We are glad to hear how SYNTRA works on new domains and tasks, including results that did not work well.
+  - type: textarea
+    id: task
+    attributes:
+      label: Task and corpus
+      description: Domain, what users search for, corpus size and language.
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Few-shot examples
+      description: How many query–positive-document examples you used, and one representative example if you can share it.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question or result
+      description: What you would like help with, or what you observed (e.g. nDCG@10 before and after fine-tuning, which embedding model).
+    validations:
+      required: true
